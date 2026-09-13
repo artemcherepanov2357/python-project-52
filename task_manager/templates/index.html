@@ -1,1 +1,14 @@
-<h1>Hello!</h1>
+{% extends 'base.html' %}
+
+{% block title %}Менеджер задач{% endblock %}
+
+{% block content %}
+<div class="card bg-light border">
+    <div class="card-body p-4">
+        <h1 class="card-title h3 mb-3">Привет от Хекслета!</h1>
+        <p class="card-text text-muted mb-4">Практические курсы по программированию</p>
+        <hr>
+        <a href="https://ru.hexlet.io" class="btn btn-primary">Узнать больше</a>
+    </div>
+</div>
+{% endblock %}
