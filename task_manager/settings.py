@@ -125,6 +125,10 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 
 TIME_ZONE = 'UTC'
 
+LANGUAGES = [
+    ('ru', 'Русский'),
+]
+
 
 USE_TZ = True
 
