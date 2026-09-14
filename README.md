@@ -2,8 +2,6 @@
 
 [![hexlet-check](https://github.com/artemcherepanov2357/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-52/actions)
 
----
-
 # Demo
 https://python-project-52-747b.onrender.com/
 
