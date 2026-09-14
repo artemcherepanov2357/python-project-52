@@ -13,7 +13,7 @@ collectstatic:
 migrate:
 	uv run python manage.py migrate
 
-setup: install collectstatic migrate
+setup: install tailwind collectstatic migrate
 
 build:
 	./build.sh
