@@ -1,11 +1,14 @@
 install:
 	uv sync
 
-lint:
-	uv run ruff check task_manager
-
 tailwind:
 	uv run python manage.py tailwind build
+
+messages:
+	uv run python manage.py makemessages -l ru
+
+compilemessages:
+	uv run python manage.py compilemessages
 
 collectstatic:
 	uv run python manage.py collectstatic --no-input
@@ -13,7 +16,7 @@ collectstatic:
 migrate:
 	uv run python manage.py migrate
 
-setup: install tailwind collectstatic migrate
+setup: install tailwind compilemessages collectstatic migrate
 
 build:
 	./build.sh
