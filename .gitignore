@@ -25,3 +25,6 @@ coverage.xml
 
 *.sqlite3
 staticfiles/
+
+.django_tailwind_cli/
+assets/css/tailwind.css
