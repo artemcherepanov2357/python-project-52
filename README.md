@@ -2,6 +2,13 @@
 
 [![hexlet-check](https://github.com/artemcherepanov2357/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-52/actions)
 
+---
+
+# Demo
+https://python-project-52-747b.onrender.com/
+
+---
+
 На практике узнаете о проектировании баз данных, PaaS, мониторинге ошибок, ORM, фреймворке Django, шаблонизации и Tailwind CSS.
 
 Учебный проект Хекслета: https://ru.hexlet.io/programs/python
