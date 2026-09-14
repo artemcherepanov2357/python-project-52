@@ -1,6 +1,9 @@
 install:
 	uv sync
 
+lint:
+	uv run ruff check task_manager
+
 collectstatic:
 	uv run python manage.py collectstatic --no-input
 

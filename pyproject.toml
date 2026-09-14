@@ -11,3 +11,8 @@ dependencies = [
     "psycopg[binary]>=3.3.5",
     "python-dotenv>=1.2.3",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.7",
+]
