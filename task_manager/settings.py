@@ -155,3 +155,5 @@ STATICFILES_DIRS = [BASE_DIR / "assets"]
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+TAILWIND_CLI_SRC_CSS = 'tailwind/source.css'

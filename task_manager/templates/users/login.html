@@ -4,10 +4,8 @@
 {% block title %}{% trans "Login" %}{% endblock %}
 
 {% block content %}
-<h1 class="text-2xl font-bold mb-6">{% trans "Login" %}</h1>
-
-<form method="post" class="max-w-md">
-    {% csrf_token %}
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+    <h1 class="text-2xl font-bold text-gray-900 mb-6">{% trans "Login" %}</h1>
 
     {% if form.non_field_errors %}
     <div role="alert" class="bg-red-100 text-red-800 p-3 rounded mb-4">
@@ -15,18 +13,24 @@
     </div>
     {% endif %}
 
-    {% for field in form %}
-    <div class="mb-4">
-        <label for="{{ field.id_for_label }}" class="block mb-1 font-medium">{{ field.label }}</label>
-        {{ field }}
-        {% for error in field.errors %}
-        <p class="text-sm text-red-600 mt-1">{{ error }}</p>
-        {% endfor %}
-    </div>
-    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
 
-    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-        {% trans "Log in" %}
-    </button>
-</form>
+        {% for field in form %}
+        <div class="mb-4">
+            <label for="{{ field.id_for_label }}" class="block mb-1 text-sm font-medium text-gray-700">
+                {{ field.label }}
+            </label>
+            {{ field }}
+            {% for error in field.errors %}
+            <p class="text-sm text-red-600 mt-1">{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+            {% trans "Log in" %}
+        </button>
+    </form>
+</div>
 {% endblock %}
