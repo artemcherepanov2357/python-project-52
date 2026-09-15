@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+@source "../templates";
 @source "../task_manager/templates";
 @source "../apps";
 
