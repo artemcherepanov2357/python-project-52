@@ -14,6 +14,7 @@ from pathlib import Path
 
 import dj_database_url
 from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
 
 load_dotenv()
 
@@ -126,7 +127,7 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 TIME_ZONE = 'UTC'
 
 LANGUAGES = [
-    ('ru', 'Русский'),
+    ('ru', _('Russian')),
 ]
 
 
@@ -150,3 +151,7 @@ MAILERS = {
 CSRF_TRUSTED_ORIGINS = ['https://python-project-52-747b.onrender.com']
 
 STATICFILES_DIRS = [BASE_DIR / "assets"]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
