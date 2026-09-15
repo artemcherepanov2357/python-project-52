@@ -22,6 +22,9 @@
             <a href="{% url 'statuses:list' %}" class="text-gray-600 hover:text-gray-900">
                 {% trans "Statuses" %}
             </a>
+            <a href="{% url 'labels:list' %}" class="text-gray-600 hover:text-gray-900">
+                {% trans "Labels" %}
+            </a>
         </div>
         <div class="flex items-center space-x-4">
             {% if user.is_authenticated %}

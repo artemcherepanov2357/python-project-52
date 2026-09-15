@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Labels" %}{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <h1 class="text-3xl font-bold text-gray-900">{% trans "Labels" %}</h1>
+    <a href="{% url 'labels:create' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">
+        {% trans "Create label" %}
+    </a>
+</div>
+
+<table class="w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="text-left p-3">{% trans "ID" %}</th>
+            <th class="text-left p-3">{% trans "Name" %}</th>
+            <th class="text-left p-3">{% trans "Date created" %}</th>
+            <th class="text-left p-3"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for label in labels %}
+        <tr class="border-t border-gray-200">
+            <td class="p-3">{{ label.id }}</td>
+            <td class="p-3">{{ label.name }}</td>
+            <td class="p-3">{{ label.created_at|date:"d.m.Y H:i" }}</td>
+            <td class="p-3 space-x-3">
+                <a href="{% url 'labels:update' label.id %}" class="text-blue-600 hover:underline">{% trans "Edit" %}</a>
+                <a href="{% url 'labels:delete' label.id %}" class="text-red-600 hover:underline">{% trans "Delete" %}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
