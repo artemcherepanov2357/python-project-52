@@ -1,3 +1,5 @@
+.PHONY: install tailwind messages compilemessages collectstatic migrate setup build render-start
+
 install:
 	uv sync
 
