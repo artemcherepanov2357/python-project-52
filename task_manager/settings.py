@@ -13,8 +13,8 @@ import os
 from pathlib import Path
 
 import dj_database_url
-from dotenv import load_dotenv
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
 
 load_dotenv()
 
