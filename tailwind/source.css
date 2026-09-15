@@ -1,2 +1,35 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
+
+@source "../task_manager/templates";
+@source "../apps";
+
+@layer base {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    textarea,
+    select {
+        width: 100%;
+    }
+
+    /* Подсказки Django (help_text) */
+    .helptext {
+        display: block;
+        font-size: 0.75rem;      /* 12px */
+        color: #6b7280;          /* text-gray-500 */
+        margin-top: 0.25rem;
+    }
+
+    .helptext ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .helptext li {
+        margin: 0;
+        padding: 0;
+    }
+}

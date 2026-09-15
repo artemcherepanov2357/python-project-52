@@ -4,26 +4,36 @@
 {% block title %}{% trans "Sign up" %}{% endblock %}
 
 {% block content %}
-<h1 class="text-2xl font-bold mb-6">{% trans "Sign up" %}</h1>
+<div class="max-w-md ml-16 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+    <h1 class="text-2xl font-bold text-gray-900 mb-6">{% trans "Sign up" %}</h1>
 
-<form method="post" class="max-w-md">
-    {% csrf_token %}
-
-    {% for field in form %}
-    <div class="mb-4">
-        <label for="{{ field.id_for_label }}" class="block mb-1 font-medium">{{ field.label }}</label>
-        {{ field }}
-        {% if field.help_text %}
-        <p class="text-sm text-gray-500 mt-1">{{ field.help_text }}</p>
-        {% endif %}
-        {% for error in field.errors %}
-        <p class="text-sm text-red-600 mt-1">{{ error }}</p>
-        {% endfor %}
+    {% if form.non_field_errors %}
+    <div role="alert" class="bg-red-100 text-red-800 p-3 rounded mb-4">
+        {% for error in form.non_field_errors %}{{ error }}{% endfor %}
     </div>
-    {% endfor %}
+    {% endif %}
 
-    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-        {% trans "Register" %}
-    </button>
-</form>
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="mb-4">
+            <label for="{{ field.id_for_label }}" class="block mb-1 text-sm font-semibold text-gray-900">
+                {{ field.label }}:
+            </label>
+            {% if field.help_text %}
+            <div class="text-xs text-gray-500 mt-1">{{ field.help_text|safe }}</div>
+            {% endif %}
+            {{ field }}
+            {% for error in field.errors %}
+            <p class="text-sm text-red-600 mt-1">{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
+            {% trans "Register" %}
+        </button>
+    </form>
+</div>
 {% endblock %}
