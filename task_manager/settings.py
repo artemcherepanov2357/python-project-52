@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.statuses',
     'apps.labels',
+    'apps.tasks',
 ]
 
 MIDDLEWARE = [

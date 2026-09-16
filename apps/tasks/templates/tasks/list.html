@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Tasks" %}{% endblock %}
+
+{% block content %}
+<div class="flex items-center justify-between mb-6">
+    <h1 class="text-3xl font-bold text-gray-900">{% trans "Tasks" %}</h1>
+    <a href="{% url 'tasks:create' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">
+        {% trans "Create task" %}
+    </a>
+</div>
+
+<table class="w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+    <thead class="bg-gray-100">
+        <tr>
+            <th class="text-left p-3">{% trans "ID" %}</th>
+            <th class="text-left p-3">{% trans "Name" %}</th>
+            <th class="text-left p-3">{% trans "Status" %}</th>
+            <th class="text-left p-3">{% trans "Author" %}</th>
+            <th class="text-left p-3">{% trans "Executor" %}</th>
+            <th class="text-left p-3">{% trans "Date created" %}</th>
+            <th class="text-left p-3"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr class="border-t border-gray-200">
+            <td class="p-3">{{ task.id }}</td>
+            <td class="p-3">
+                <a href="{% url 'tasks:detail' task.id %}" class="text-blue-600 hover:underline">
+                    {{ task.name }}
+                </a>
+            </td>
+            <td class="p-3">{{ task.status.name }}</td>
+            <td class="p-3">{{ task.author.username }}</td>
+            <td class="p-3">{{ task.executor.username|default:"" }}</td>
+            <td class="p-3">{{ task.created_at|date:"d.m.Y H:i" }}</td>
+            <td class="p-3 space-x-3">
+                <a href="{% url 'tasks:update' task.id %}" class="text-blue-600 hover:underline">{% trans "Edit" %}</a>
+                <a href="{% url 'tasks:delete' task.id %}" class="text-red-600 hover:underline">{% trans "Delete" %}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

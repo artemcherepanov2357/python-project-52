@@ -6,257 +6,223 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Task Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-15 23:03+0000\n"
-"PO-Revision-Date: 2026-09-15 22:30+0000\n"
+"POT-Creation-Date: 2026-09-15 22:24+0000\n"
+"PO-Revision-Date: 2026-09-16 00:00+0000\n"
 "Last-Translator: Artem <artem@example.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: apps/labels/forms.py:12 apps/labels/templates/labels/list.html:18
-#: apps/statuses/forms.py:12 apps/statuses/templates/statuses/list.html:18
-msgid "Name"
-msgstr "Имя"
-
-#: apps/labels/templates/labels/create.html:4
-#: apps/labels/templates/labels/create.html:8
-#: apps/labels/templates/labels/list.html:10
-msgid "Create label"
-msgstr "Создать метку"
-
-#: apps/labels/templates/labels/create.html:24
-#: apps/statuses/templates/statuses/create.html:25
-msgid "Create"
-msgstr "Создать"
-
-#: apps/labels/templates/labels/delete.html:4
-#: apps/labels/templates/labels/delete.html:8
-msgid "Delete label"
-msgstr "Удаление метки"
-
-#: apps/labels/templates/labels/delete.html:9
-#: apps/statuses/templates/statuses/delete.html:9
-#: apps/users/templates/users/delete.html:9
-msgid "Are you sure you want to delete"
-msgstr "Вы уверены, что хотите удалить"
-
-#: apps/labels/templates/labels/delete.html:13
-#: apps/statuses/templates/statuses/delete.html:13
-#: apps/users/templates/users/delete.html:14
-msgid "Yes, delete"
-msgstr "Да, удалить"
-
-# --- Метки ---
-#: apps/labels/templates/labels/list.html:4
-#: apps/labels/templates/labels/list.html:8 templates/base.html:26
-msgid "Labels"
-msgstr "Метки"
-
-# --- Пользователи: список ---
-#: apps/labels/templates/labels/list.html:17
-#: apps/statuses/templates/statuses/list.html:17
-#: apps/users/templates/users/list.html:12
-msgid "ID"
-msgstr "ID"
-
-#: apps/labels/templates/labels/list.html:19
-#: apps/statuses/templates/statuses/list.html:19
-msgid "Date created"
-msgstr "Дата создания"
-
-#: apps/labels/templates/labels/list.html:30
-#: apps/statuses/templates/statuses/list.html:30
-#: apps/users/templates/users/list.html:27
-msgid "Edit"
-msgstr "Изменить"
-
-#: apps/labels/templates/labels/list.html:31
-#: apps/statuses/templates/statuses/list.html:31
-#: apps/users/templates/users/list.html:28
-msgid "Delete"
-msgstr "Удалить"
-
-#: apps/labels/templates/labels/update.html:4
-#: apps/labels/templates/labels/update.html:8
-msgid "Edit label"
-msgstr "Изменение метки"
-
-#: apps/labels/templates/labels/update.html:24
-#: apps/statuses/templates/statuses/update.html:25
-#: apps/users/templates/users/update.html:23
-msgid "Change"
-msgstr "Изменить"
-
-#: apps/labels/views.py:26
-msgid "Label successfully created"
-msgstr "Метка успешно создана"
-
-#: apps/labels/views.py:38
-msgid "Label successfully updated"
-msgstr "Метка успешно изменена"
-
-#: apps/labels/views.py:49
-msgid "Label successfully deleted"
-msgstr "Метка успешно удалена"
-
-# --- Статусы: формы ---
-#: apps/statuses/templates/statuses/create.html:5
-#: apps/statuses/templates/statuses/create.html:9
-#: apps/statuses/templates/statuses/list.html:10
-#: apps/statuses/templates/statuses/update.html:5
-msgid "Create status"
-msgstr "Создать статус"
-
-#: apps/statuses/templates/statuses/delete.html:4
-#: apps/statuses/templates/statuses/delete.html:8
-msgid "Delete status"
-msgstr "Удаление статуса"
-
-#: apps/statuses/templates/statuses/list.html:4
-#: apps/statuses/templates/statuses/list.html:8 templates/base.html:23
-msgid "Statuses"
-msgstr "Статусы"
-
-#: apps/statuses/templates/statuses/update.html:9
-msgid "Change status"
-msgstr "Изменение статуса"
-
-# --- Статусы: flash-сообщения ---
-#: apps/statuses/views.py:27
-msgid "Status successfully created"
-msgstr "Статус успешно создан"
-
-#: apps/statuses/views.py:39
-msgid "Status successfully updated"
-msgstr "Статус успешно изменен"
-
-#: apps/statuses/views.py:50
-msgid "Status successfully deleted"
-msgstr "Статус успешно удален"
-
-# --- Пользователи: формы ---
-#: apps/users/forms.py:11
-msgid "First name"
-msgstr "Имя"
-
-#: apps/users/forms.py:12
-msgid "Last name"
-msgstr "Фамилия"
-
-#: apps/users/forms.py:13 apps/users/templates/users/list.html:13
-msgid "Username"
-msgstr "Имя пользователя"
-
-#: apps/users/templates/users/create.html:4
-#: apps/users/templates/users/create.html:8 templates/base.html:42
-msgid "Sign up"
-msgstr "Регистрация"
-
-#: apps/users/templates/users/create.html:35
-msgid "Register"
-msgstr "Зарегистрировать"
-
-#: apps/users/templates/users/delete.html:4
-#: apps/users/templates/users/delete.html:7
-msgid "Delete user"
-msgstr "Удаление пользователя"
-
-# --- Навигация ---
-#: apps/users/templates/users/list.html:4
-#: apps/users/templates/users/list.html:7 templates/base.html:20
-msgid "Users"
-msgstr "Пользователи"
-
-#: apps/users/templates/users/list.html:14
-msgid "Full name"
-msgstr "Полное имя"
-
-#: apps/users/templates/users/list.html:15
-msgid "Date joined"
-msgstr "Дата регистрации"
-
-#: apps/users/templates/users/login.html:4
-#: apps/users/templates/users/login.html:8 templates/base.html:39
-msgid "Login"
-msgstr "Вход"
-
-#: apps/users/templates/users/login.html:32
-msgid "Log in"
-msgstr "Войти"
-
-# --- Пользователи: страницы ---
-#: apps/users/templates/users/update.html:4
-#: apps/users/templates/users/update.html:7
-msgid "Edit user"
-msgstr "Редактирование пользователя"
-
-# --- Пользователи: flash-сообщения ---
-#: apps/users/views.py:29
-msgid "User successfully registered"
-msgstr "Пользователь успешно зарегистрирован"
-
-#: apps/users/views.py:41 apps/users/views.py:58
-msgid "You don't have permission to change"
-msgstr "У вас нет прав для изменения"
-
-#: apps/users/views.py:47
-msgid "User successfully updated"
-msgstr "Пользователь успешно изменен"
-
-#: apps/users/views.py:64
-msgid "User successfully deleted"
-msgstr "Пользователь успешно удален"
-
-#: apps/users/views.py:74
-msgid "You are logged in"
-msgstr "Вы залогинены"
-
-#: apps/users/views.py:83
-msgid "You are logged out"
-msgstr "Вы разлогинены"
-
-# --- Служебное ---
-#: task_manager/settings.py:125
-msgid "Russian"
-msgstr "Русский"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 # --- Главная страница ---
-#: task_manager/templates/index.html:4 templates/base.html:8
-#: templates/base.html:17
 msgid "Task Manager"
 msgstr "Менеджер задач"
 
-#: task_manager/templates/index.html:9
 msgid "Hello from Hexlet!"
 msgstr "Привет от Хекслета!"
 
-#: task_manager/templates/index.html:12
 msgid "Practical programming courses"
 msgstr "Практические курсы по программированию"
 
-#: task_manager/templates/index.html:16
 msgid "Learn more"
 msgstr "Узнать больше"
 
-#: templates/base.html:34
+# --- Навигация ---
+msgid "Users"
+msgstr "Пользователи"
+
+msgid "Login"
+msgstr "Вход"
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid "Sign up"
+msgstr "Регистрация"
+
 msgid "Logout"
 msgstr "Выход"
 
-#~ msgid "Password"
-#~ msgstr "Пароль"
+# --- Пользователи: формы ---
+msgid "First name"
+msgstr "Имя"
 
-#~ msgid "Password confirmation"
-#~ msgstr "Подтверждение пароля"
+msgid "Last name"
+msgstr "Фамилия"
 
-#~ msgid "Edit status"
-#~ msgstr "Изменение статуса"
+msgid "Username"
+msgstr "Имя пользователя"
 
-#~ msgid "Cannot delete status"
-#~ msgstr "Невозможно удалить статус"
+msgid "Password"
+msgstr "Пароль"
 
-#~ msgid "Cannot delete label"
-#~ msgstr "Невозможно удалить метку"
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+msgid "Register"
+msgstr "Зарегистрировать"
+
+msgid "Change"
+msgstr "Изменить"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+# --- Общие поля таблиц ---
+msgid "ID"
+msgstr "ID"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Full name"
+msgstr "Полное имя"
+
+msgid "Date joined"
+msgstr "Дата регистрации"
+
+msgid "Date created"
+msgstr "Дата создания"
+
+msgid "Edit"
+msgstr "Изменить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Show"
+msgstr "Показать"
+
+msgid "Back to list"
+msgstr "Вернуться к списку"
+
+# --- Пользователи: страницы ---
+msgid "Edit user"
+msgstr "Редактирование пользователя"
+
+msgid "Delete user"
+msgstr "Удаление пользователя"
+
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+# --- Пользователи: flash-сообщения ---
+msgid "User successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
+
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+msgid "You are logged out"
+msgstr "Вы разлогинены"
+
+msgid "User successfully updated"
+msgstr "Пользователь успешно изменен"
+
+msgid "User successfully deleted"
+msgstr "Пользователь успешно удален"
+
+msgid "You don't have permission to change"
+msgstr "У вас нет прав для изменения"
+
+# --- Статусы ---
+msgid "Statuses"
+msgstr "Статусы"
+
+msgid "Create status"
+msgstr "Создать статус"
+
+msgid "Edit status"
+msgstr "Изменение статуса"
+
+msgid "Change status"
+msgstr "Изменение статуса"
+
+msgid "Delete status"
+msgstr "Удаление статуса"
+
+msgid "Status successfully created"
+msgstr "Статус успешно создан"
+
+msgid "Status successfully updated"
+msgstr "Статус успешно изменен"
+
+msgid "Status successfully deleted"
+msgstr "Статус успешно удален"
+
+msgid "Cannot delete status"
+msgstr "Невозможно удалить статус"
+
+# --- Метки ---
+msgid "Labels"
+msgstr "Метки"
+
+msgid "Create label"
+msgstr "Создать метку"
+
+msgid "Edit label"
+msgstr "Изменение метки"
+
+msgid "Delete label"
+msgstr "Удаление метки"
+
+msgid "Label successfully created"
+msgstr "Метка успешно создана"
+
+msgid "Label successfully updated"
+msgstr "Метка успешно изменена"
+
+msgid "Label successfully deleted"
+msgstr "Метка успешно удалена"
+
+msgid "Cannot delete label"
+msgstr "Невозможно удалить метку"
+
+# --- Задачи ---
+msgid "Tasks"
+msgstr "Задачи"
+
+msgid "Create task"
+msgstr "Создать задачу"
+
+msgid "Edit task"
+msgstr "Изменение задачи"
+
+msgid "Delete task"
+msgstr "Удаление задачи"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Executor"
+msgstr "Исполнитель"
+
+msgid "Task successfully created"
+msgstr "Задача успешно создана"
+
+msgid "Task successfully updated"
+msgstr "Задача успешно изменена"
+
+msgid "Task successfully deleted"
+msgstr "Задача успешно удалена"
+
+msgid "Only the author can delete a task"
+msgstr "Задачу может удалить только ее автор"
+
+msgid "View task"
+msgstr "Просмотр задачи"
+
+# --- Служебное ---
+msgid "Russian"
+msgstr "Русский"
