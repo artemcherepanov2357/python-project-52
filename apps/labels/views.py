@@ -7,6 +7,9 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from .forms import LabelForm
 from .models import Label
 
+from django.db.models import ProtectedError
+from django.shortcuts import redirect
+
 
 class LabelListView(LoginRequiredMixin, ListView):
     model = Label
@@ -45,6 +48,9 @@ class LabelDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('labels:list')
 
     def form_valid(self, form):
+        if self.object.tasks.exists():
+            messages.error(self.request, _('Cannot delete label'))
+            return redirect('labels:list')
         response = super().form_valid(form)
         messages.success(self.request, _('Label successfully deleted'))
         return response

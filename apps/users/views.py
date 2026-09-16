@@ -10,6 +10,8 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from .forms import CustomUserCreationForm
 
+from django.db.models import ProtectedError
+
 
 class UserListView(ListView):
     model = User
@@ -60,10 +62,16 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-        response = super().form_valid(form)
-        messages.success(self.request, _('User successfully deleted'))
-        return response
-
+        try:
+            response = super().form_valid(form)
+            messages.success(self.request, _('User successfully deleted'))
+            return response
+        except ProtectedError:
+            messages.error(
+                self.request,
+                _('Cannot delete user because they are assigned to tasks'),
+            )
+            return redirect('users:list')
 
 class CustomLoginView(LoginView):
     template_name = 'users/login.html'

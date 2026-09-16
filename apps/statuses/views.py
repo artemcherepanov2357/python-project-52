@@ -7,6 +7,7 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from .forms import StatusForm
 from .models import Status
 
+from django.shortcuts import redirect
 
 class StatusListView(LoginRequiredMixin, ListView):
     model = Status
@@ -45,6 +46,9 @@ class StatusDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('statuses:list')
 
     def form_valid(self, form):
+        if self.object.tasks.exists():
+            messages.error(self.request, _('Cannot delete status'))
+            return redirect('statuses:list')
         response = super().form_valid(form)
         messages.success(self.request, _('Status successfully deleted'))
         return response
