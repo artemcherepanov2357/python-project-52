@@ -2,7 +2,7 @@
 
 Веб-приложение для управления задачами. Позволяет ставить задачи, назначать исполнителей, менять статусы, помечать метками и фильтровать список.
 
-[![hexlet-check](https://github.com/artemcherepanov2357/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-52/actions)
+[![hexlet-check](https://github.com/artemcherepanov2357/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-52/actions) [![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=artemcherepanov2357_python-project-52&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=artemcherepanov2357_python-project-52)
 
 ## Демо
 https://python-project-52-747b.onrender.com/
