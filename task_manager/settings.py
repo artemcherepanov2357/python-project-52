@@ -154,3 +154,21 @@ LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 
 TAILWIND_CLI_SRC_CSS = 'tailwind/source.css'
+
+# --- Инициализация Sentry SDK для отправки ошибок в Bugsink ---
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn=os.getenv('SENTRY_DSN'),  # DSN будет передан через переменные окружения
+    integrations=[DjangoIntegration()],
+
+    # Отправлять данные о пользователе (IP, заголовки) для лучшей диагностики.
+    send_default_pii=True,
+
+    # Собирать данные о производительности.
+    traces_sample_rate=1.0,
+
+    # Явно указываем окружение, чтобы отличать ошибки с продакшена от локальных.
+    environment="production",
+)
