@@ -84,3 +84,41 @@ class TaskCrudTest(TestCase):
         response = self.client.post(reverse('tasks:delete', args=[task.id]))
         self.assertRedirects(response, reverse('tasks:list'))
         self.assertTrue(Task.objects.filter(name='Test').exists())
+
+class TaskFilterTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='ivan', password='Secret123!')
+        self.other = User.objects.create_user(username='petr', password='Secret123!')
+        self.status_new = Status.objects.create(name='Новый')
+        self.status_done = Status.objects.create(name='Завершён')
+        self.label = Label.objects.create(name='Important')
+        self.client.force_login(self.user)
+
+        self.t1 = Task.objects.create(name='Mine new', status=self.status_new, author=self.user)
+        self.t2 = Task.objects.create(name='Other done', status=self.status_done, author=self.other)
+        self.t3 = Task.objects.create(name='With label', status=self.status_new, author=self.other)
+        self.t3.labels.add(self.label)
+
+    def test_filter_by_status(self):
+        response = self.client.get(reverse('tasks:list'), {'status': self.status_new.id})
+        self.assertContains(response, 'Mine new')
+        self.assertContains(response, 'With label')
+        self.assertNotContains(response, 'Other done')
+
+    def test_filter_by_executor(self):
+        self.t2.executor = self.user
+        self.t2.save()
+        response = self.client.get(reverse('tasks:list'), {'executor': self.user.id})
+        self.assertContains(response, 'Other done')
+        self.assertNotContains(response, 'Mine new')
+
+    def test_filter_by_label(self):
+        response = self.client.get(reverse('tasks:list'), {'labels': self.label.id})
+        self.assertContains(response, 'With label')
+        self.assertNotContains(response, 'Mine new')
+
+    def test_filter_self_tasks(self):
+        response = self.client.get(reverse('tasks:list'), {'self_tasks': 'on'})
+        self.assertContains(response, 'Mine new')
+        self.assertNotContains(response, 'Other done')
+        self.assertNotContains(response, 'With label')

@@ -11,6 +11,36 @@
     </a>
 </div>
 
+<form method="get" class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6 flex flex-wrap items-end gap-x-8 gap-y-4">
+    <div>
+        <label for="{{ filter.form.status.id_for_label }}" class="block mb-1 text-sm text-gray-700">
+            {{ filter.form.status.label }}:
+        </label>
+        <div class="w-44">{{ filter.form.status }}</div>
+    </div>
+    <div>
+        <label for="{{ filter.form.executor.id_for_label }}" class="block mb-1 text-sm text-gray-700">
+            {{ filter.form.executor.label }}:
+        </label>
+        <div class="w-44">{{ filter.form.executor }}</div>
+    </div>
+    <div>
+        <label for="{{ filter.form.labels.id_for_label }}" class="block mb-1 text-sm text-gray-700">
+            {{ filter.form.labels.label }}:
+        </label>
+        <div class="w-44">{{ filter.form.labels }}</div>
+    </div>
+    <div class="flex items-center gap-6 pb-2">
+        <label class="flex items-center gap-2 whitespace-nowrap">
+            {{ filter.form.self_tasks }}
+            <span class="text-sm text-gray-700">{{ filter.form.self_tasks.label }}</span>
+        </label>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg">
+            {% trans "Show" %}
+        </button>
+    </div>
+</form>
+
 <table class="w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
     <thead class="bg-gray-100">
         <tr>

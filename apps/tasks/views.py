@@ -15,8 +15,13 @@ from .forms import TaskForm
 from .models import Task
 
 
-class TaskListView(LoginRequiredMixin, ListView):
+from django_filters.views import FilterView
+from .filters import TaskFilter
+
+
+class TaskListView(LoginRequiredMixin, FilterView):
     model = Task
+    filterset_class = TaskFilter
     template_name = 'tasks/list.html'
     context_object_name = 'tasks'
     ordering = ['id']
