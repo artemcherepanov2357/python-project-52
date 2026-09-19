@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomUserUpdateForm
 
 from django.db.models import ProtectedError
 
@@ -34,7 +34,7 @@ class UserCreateView(CreateView):
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
-    form_class = CustomUserCreationForm
+    form_class = CustomUserUpdateForm
     template_name = 'users/update.html'
     success_url = reverse_lazy('users:list')
 
