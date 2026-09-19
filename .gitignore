@@ -5,6 +5,8 @@ __pycache__/
 *_cache/
 .idea/
 .env
+.env.local
+*.token
 
 # Logs and temporary files
 *.log
