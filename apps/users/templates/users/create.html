@@ -18,9 +18,7 @@
 
         {% for field in form %}
         <div class="mb-4">
-            <label for="{{ field.id_for_label }}" class="block mb-1 text-sm font-semibold text-gray-900">
-                {{ field.label }}:
-            </label>
+            <label for="{{ field.id_for_label }}" class="block mb-1 text-sm font-medium text-gray-700">{{ field.label }}</label>
             {% if field.help_text %}
             <div class="text-xs text-gray-500 mt-1">{{ field.help_text|safe }}</div>
             {% endif %}
