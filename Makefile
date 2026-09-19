@@ -11,7 +11,11 @@ messages:
 	uv run python manage.py makemessages -l ru
 
 compilemessages:
-	uv run python manage.py compilemessages
+	@if command -v msgfmt >/dev/null 2>&1; then \
+		uv run python manage.py compilemessages; \
+	else \
+		echo "msgfmt not found, skipping translation compilation"; \
+	fi
 
 collectstatic:
 	uv run python manage.py collectstatic --no-input --clear
