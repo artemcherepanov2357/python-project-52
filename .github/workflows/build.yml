@@ -34,6 +34,9 @@ jobs:
       - name: Prepare directories
         run: mkdir -p assets/css staticfiles
 
+      - name: Install gettext
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
       - name: Compile translations
         run: uv run python manage.py compilemessages
 
