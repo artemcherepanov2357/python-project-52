@@ -1,9 +1,14 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=200, unique=True)     # ← unique=True
+    name = models.CharField(
+        max_length=200,
+        unique=True,
+        verbose_name=_("Name"),
+    )
     description = models.TextField(blank=True)
     status = models.ForeignKey(
         'statuses.Status',
@@ -28,6 +33,10 @@ class Task(models.Model):
         related_name='tasks',
     )
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = ("Task")
+        verbose_name_plural = ("Tasks")
 
     def __str__(self):
         return self.name

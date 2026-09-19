@@ -91,6 +91,9 @@ msgstr "Метки"
 msgid "Tasks"
 msgstr "Задачи"
 
+msgid "Task"
+msgstr "Задача"
+
 # --- Пользователи ---
 msgid "First name"
 msgstr "Имя"
