@@ -3,14 +3,13 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
+from django.db.models import ProtectedError
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from .forms import CustomUserCreationForm, CustomUserUpdateForm
-
-from django.db.models import ProtectedError
 
 
 class UserListView(ListView):
@@ -72,6 +71,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
                 _('Cannot delete user because they are assigned to tasks'),
             )
             return redirect('users:list')
+
 
 class CustomLoginView(LoginView):
     template_name = 'users/login.html'

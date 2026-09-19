@@ -85,6 +85,7 @@ class TaskCrudTest(TestCase):
         self.assertRedirects(response, reverse('tasks:list'))
         self.assertTrue(Task.objects.filter(name='Test').exists())
 
+
 class TaskFilterTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='ivan', password='Secret123!')

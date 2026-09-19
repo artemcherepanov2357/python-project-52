@@ -14,6 +14,7 @@ class CustomUserCreationForm(UserCreationForm):
             'username': _('Username'),
         }
 
+
 class CustomUserUpdateForm(forms.ModelForm):
     class Meta:
         model = User

@@ -7,16 +7,13 @@ from django.views.generic import (
     CreateView,
     DeleteView,
     DetailView,
-    ListView,
     UpdateView,
 )
+from django_filters.views import FilterView
 
+from .filters import TaskFilter
 from .forms import TaskForm
 from .models import Task
-
-
-from django_filters.views import FilterView
-from .filters import TaskFilter
 
 
 class TaskListView(LoginRequiredMixin, FilterView):
