@@ -1,43 +1,42 @@
-# Менеджер задач (Python)
+# Task Manager
+
+Веб-приложение для управления задачами. Позволяет ставить задачи, назначать исполнителей, менять статусы, помечать метками и фильтровать список.
 
 [![hexlet-check](https://github.com/artemcherepanov2357/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/artemcherepanov2357/python-project-52/actions)
 
-# Demo
+## Демо
 https://python-project-52-747b.onrender.com/
-
----
-
-На практике узнаете о проектировании баз данных, PaaS, мониторинге ошибок, ORM, фреймворке Django, шаблонизации и Tailwind CSS.
-
-Учебный проект Хекслета: https://ru.hexlet.io/programs/python
-Как это должно работать: https://files.hexlet.app/a/0rkpse
 
 ## Стек
 
-- Python
+- **Python 3.14**, [uv](https://github.com/astral-sh/uv)
+- **Django** — ORM, шаблоны, формы, аутентификация
+- **PostgreSQL** — продакшен, **SQLite** — локально
+- **django-tailwind-cli** + **@tailwindcss/forms** — стилизация
+- **Whitenoise** — раздача статики
+- **Gunicorn** — WSGI-сервер
+- **Render.com** — хостинг, PostgreSQL
+- **python-dotenv**, **dj-database-url** — переменные окружения
 
-## Установка
-
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
+## Локальный запуск
 
 ```bash
-git clone https://github.com/artemcherepanov2357/python-project-52.git
-cd python-project-52
+# Установка зависимостей
+uv sync
+
+# Переменные окружения — создай файл .env
+cp .env.example .env
+# заполни SECRET_KEY, DEBUG=True, DATABASE_URL=sqlite:///db.sqlite3
+
+# Сборка стилей
+uv run python manage.py tailwind build
+
+# Миграции
+uv run python manage.py migrate
+
+# Запуск
+uv run python manage.py runserver
+
+# Тесты
+uv run python manage.py test apps
 ```
-
-## Использование
-
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
-
----
-
-<details>
-<summary>Автоматические тесты Хекслета</summary>
-
-Тесты запускаются на каждый коммит. За запуск отвечает файл `.github/workflows/hexlet-check.yml` — не удаляйте и не переименовывайте ни его, ни репозиторий.
-
-</details>
-
-## О Хекслете
-
-[Хекслет](https://ru.hexlet.io/) — школа программирования: авторские программы обучения с практикой, поддержкой наставников и реальными проектами, которые остаются в резюме. Этот репозиторий — один из таких проектов.
