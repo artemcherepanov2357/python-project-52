@@ -75,7 +75,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
 
 class CustomLoginView(LoginView):
     template_name = 'users/login.html'
-    authentication_form = CustomAuthenticationForm
+    form_class = CustomAuthenticationForm
     redirect_authenticated_user = True
 
     def form_valid(self, form):
