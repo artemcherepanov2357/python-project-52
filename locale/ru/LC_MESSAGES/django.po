@@ -225,3 +225,6 @@ msgstr "Только свои задачи"
 # --- Служебное ---
 msgid "Russian"
 msgstr "Русский"
+
+msgid "Password"
+msgstr "Пароль"
