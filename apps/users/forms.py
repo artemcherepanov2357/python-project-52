@@ -27,11 +27,16 @@ class CustomUserUpdateForm(forms.ModelForm):
 
 class CustomAuthenticationForm(AuthenticationForm):
     username = forms.CharField(
-        label=_("Username"),
-        widget=forms.TextInput(attrs={'autofocus': True}),
+        label='Имя пользователя',
+        widget=forms.TextInput(attrs={
+            'autofocus': True,
+            'aria-label': 'Имя пользователя',
+        }),
     )
     password = forms.CharField(
-        label=_("Password"),
-        widget=forms.PasswordInput,
+        label='Пароль',
+        widget=forms.PasswordInput(attrs={
+            'aria-label': 'Пароль',
+        }),
         strip=False,
     )
