@@ -1,5 +1,6 @@
+
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
@@ -53,19 +54,3 @@ class CustomUserUpdateForm(forms.ModelForm):
         if commit:
             user.save()
         return user
-
-class CustomAuthenticationForm(AuthenticationForm):
-    username = forms.CharField(
-        label='Имя пользователя',
-        widget=forms.TextInput(attrs={
-            'autofocus': True,
-            'aria-label': 'Имя пользователя',
-        }),
-    )
-    password = forms.CharField(
-        label='Пароль',
-        widget=forms.PasswordInput(attrs={
-            'aria-label': 'Пароль',
-        }),
-        strip=False,
-    )
