@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
-from .forms import CustomUserCreationForm, CustomUserUpdateForm
+from .forms import CustomUserCreationForm, CustomUserUpdateForm, CustomAuthenticationForm
 
 
 class UserListView(ListView):
@@ -75,6 +75,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
 
 class CustomLoginView(LoginView):
     template_name = 'users/login.html'
+    authentication_form = CustomAuthenticationForm
     redirect_authenticated_user = True
 
     def form_valid(self, form):
